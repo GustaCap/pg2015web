@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registro</h2>
+<form id="formulario_registro" action="" method="POST">
+  <label for="mail">Correo</label> 
+  <!-- <input type="email" id="mail" name="mail" placeholder="tucorreo@dominio.com" required/> -->
+ 
+  <label for="pass">Contraseña</label>
+  <input type="password" id="pass" name="pass" required/>
+ 
+  <button id="enviar" type="submit" onclick="cifrar()">Enviar</button>
+</form>
+
+<script src="js/MD5.js"></script>
+<script src="js/sha1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/hmac-sha1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/hmac-md5.min.js"></script>
+<script>
+    function cifrar(){
+  
+        var input_pass = document.getElementById("pass");
+        // input_pass.value = CryptoJS.SHA1(input_pass.value);
+        input_pass.value = CryptoJS.MD5(input_pass.value);
+        // var hash = CryptoJS.MD5(input_pass);
+    // alert(hash);
+
+    }
+  </script>
+</body>
+</html>

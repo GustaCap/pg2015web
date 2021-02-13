@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registro</h2>
+<form id="formulario_registro" action="" method="POST">
+  <label for="mail">Correo</label> 
+  <!-- <input type="email" id="mail" name="mail" placeholder="tucorreo@dominio.com" required/> -->
+ 
+  <label for="pass">Contraseña</label>
+  <input type="password" id="pass" name="pass" required/>
+ 
+  <button id="enviar" type="submit" onclick="cifrar()">Enviar</button>
+</form>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js" integrity="sha512-szJ5FSo9hEmXXe7b5AUVtn/WnL8a5VofnFeYC2i2z03uS2LhAch7ewNLbl5flsEmTTimMN0enBZg/3sQ+YOSzQ==" crossorigin="anonymous"></script> -->
+<script src="js/sha256.js"></script>
+<script>
+    function cifrar(){
+      var input_pass = document.getElementById("pass");
+      input_pass.value = sha256(input_pass.value);
+    }
+  </script>
+</body>
+</html>
